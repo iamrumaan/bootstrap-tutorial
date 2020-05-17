@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginmodal">
+                    <a id="LoginModalButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -43,7 +43,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button id="reserveformmodaldismiss" type="button" class="close">
                         &times;
                     </button>
                 </div>
@@ -117,7 +117,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button id="loginmodaldismiss" type="button" class="close">
                         &times;
                     </button>
                 </div>
@@ -162,8 +162,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-3 col-sm align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning" 
-                        data-toggle="modal" data-target="#reserveformmodal">Reserve Table
+                    <a id="ReserveModalButton" role="button" class="btn btn-block nav-link btn-warning">Reserve Table
                     </a>
                 </div>
             </div>
@@ -331,6 +330,18 @@
                 }
 
             });
+        });
+        $('#LoginModalButton').click(function(){
+            $('#loginmodal').modal('show');
+        });
+        $('#ReserveModalButton').click(function(){
+            $('#reserveformmodal').modal('show');
+        });
+        $('#loginmodaldismiss').click(function(){
+            $('#loginmodal').modal('hide');
+        });
+        $('#reserveformmodaldismiss').click(function(){
+            $('#reserveformmodal').modal('hide');
         });
     </script>
 </body>
